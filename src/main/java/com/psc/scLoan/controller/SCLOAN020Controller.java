@@ -65,6 +65,7 @@ public class SCLOAN020Controller {
 
 			if (repayMentForm.getRepayAll()) {
 
+				
 				repayMentUI = repayMentService.repayMentCashQryAll(repayMentForm.getUserId());
 
 			} else {
