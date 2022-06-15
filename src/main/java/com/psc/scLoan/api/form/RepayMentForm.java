@@ -1,6 +1,11 @@
 package com.psc.scLoan.api.form;
 
+import java.util.List;
+
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.psc.scLoan.model.RepayMentStock;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -26,6 +31,18 @@ public class RepayMentForm {
 	@ApiModelProperty(value = "repayAll")
 	@NotBlank(message = "全部還款")
 	private Boolean repayAll;
+
+	@ApiModelProperty(value = "accountType")
+	@NotBlank(message = "帳戶類別")
+	private String accountType;
+
+	@ApiModelProperty(value = "repayType")
+	@NotBlank(message = "還款方式")
+	private String repayType;
+
+	@ApiModelProperty(value = "repayMentStockList")
+	@NotNull(message = "股票張數")
+	private List<RepayMentStock> repayMentStockList;
 
 	public Boolean getRepayAll() {
 		return repayAll;
@@ -57,5 +74,29 @@ public class RepayMentForm {
 
 	public void setMonth(String month) {
 		this.month = month;
+	}
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public String getRepayType() {
+		return repayType;
+	}
+
+	public void setRepayType(String repayType) {
+		this.repayType = repayType;
+	}
+
+	public List<RepayMentStock> getRepayMentStockList() {
+		return repayMentStockList;
+	}
+
+	public void setRepayMentStockList(List<RepayMentStock> repayMentStockList) {
+		this.repayMentStockList = repayMentStockList;
 	}
 }
